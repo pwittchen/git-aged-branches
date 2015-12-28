@@ -17,3 +17,8 @@ options:
 -d, --directory=DIR                                   specify path to directory with git repository
 -m, --merged=(merged|no-merged|merged <branch_name>)  show merged or not merged branches
 ```
+
+Exemplary output
+----------------
+
+![Skype fixed icon](https://github.com/pwittchen/git-aged-branches/blob/master/screenshot.png)
