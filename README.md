@@ -2,7 +2,9 @@ git-aged-branches
 =================
 shell script showing git branches of defined repository with age of their last commit
 
-it works on Mac OS X, Linux and can be helpful while investigating old git branches to delete
+It works on Mac OS X, Linux and can be helpful while investigating old git branches to delete.
+
+This script does not delete anything! It's just for informational purposes.
 
 Usage
 -----
