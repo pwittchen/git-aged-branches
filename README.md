@@ -7,6 +7,8 @@ it works on Mac OS X, Linux and can be helpful while investigating old git branc
 Usage
 -----
 
+Clone repository or single script and use it as follows:
+
 ```
 ./git-aged-branches.sh [options] [arguments]
  
