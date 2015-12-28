@@ -2,7 +2,7 @@ git-aged-branches
 =================
 shows git branches of defined repository with age of their last commit
 
-it works on Mac OS X, Linux and can be helpful while investigating old Git branches to delete
+it works on Mac OS X, Linux and can be helpful while investigating old git branches to delete
 
 Usage
 -----
