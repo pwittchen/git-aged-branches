@@ -3,8 +3,7 @@
 set -e
 
 msg() {
-  tput setab 2 # green bg
-  tput setaf 7 # white text
+  tput setaf 2 # green text
   echo ">>> $1"
   tput sgr 0
   sleep 1
@@ -54,31 +53,18 @@ parse_input_parameters() {
   fi
 }
 
-fill_branches_with_last_commit_array() {
-  # list all remote branches excluding master and develop
-  remote_branches=$(git branch -rv --$MERGED | grep -v master | grep -v develop | awk '{print $1}')
-  branches_with_last_commit_array=(); index=0
-
-  for item in $remote_branches; do
-    pretty_format="%C(bold cyan)%ar%C(reset) %C(green)%h%C(reset) %C(yellow)%s%C(reset)"
-    last_commit=$(git log $item --pretty=format:"$pretty_format" -1)
-    branches_with_last_commit_array[$index]="$item $last_commit"
-    index=$(($index+1))
-  done
-}
-
-display_branches_with_last_commit_array() {
-  for item in "${branches_with_last_commit_array[@]}"; do
-    echo -e "$item"
-  done
+display_branches() {
+  for branch in `git branch -rv --$MERGED | awk '{print $1}'`; do
+    pretty_format="%C(green)%ci%C(reset) %C(bold cyan)%ar%C(reset) %C(yellow)%h%C(reset)"
+    echo `git show --pretty=format:"$pretty_format" $branch | head -n 1` $branch;
+  done | sort -r
 }
 
 main() {
   set_input_parameters "$@"
   parse_input_parameters "$@"
   msg "listing all remote branches with age of the last commit"
-  fill_branches_with_last_commit_array "$@"
-  display_branches_with_last_commit_array "$@"
+  display_branches
 }
 
 main "$@"
