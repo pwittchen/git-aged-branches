@@ -16,16 +16,16 @@ set_input_parameters() {
         display_help "$@"
         exit 0
         ;;
-        -d|directory)
-            DIRECTORY=$2
-            shift 2
+      -d|directory)
+        DIRECTORY=$2
+        shift 2
         ;;
-        -m|merged)
-            MERGED=$2
-            shift 2
+      -m|merged)
+        MERGED=$2
+        shift 2
         ;;
-        *)
-            break
+      *)
+        break
         ;;
     esac
   done;
