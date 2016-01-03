@@ -23,4 +23,4 @@ options:
 Exemplary output
 ----------------
 
-![Skype fixed icon](https://github.com/pwittchen/git-aged-branches/blob/master/screenshot.png)
+![Screenshot](https://github.com/pwittchen/git-aged-branches/blob/master/screenshot.png)
